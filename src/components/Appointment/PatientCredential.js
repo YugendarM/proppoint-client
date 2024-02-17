@@ -22,6 +22,10 @@ function PatientCredential() {
     const handleSubmit = () => {
         console.log({userData});
         console.log(value);
+
+        if(1){
+            window.location.href = "/basic_details"
+        }
         
     }
 
@@ -42,7 +46,7 @@ function PatientCredential() {
                     <input className="border-2 border-proppoint-primaryBlue border-opacity-50 w-3/5 rounded-md px-3 py-2 shadow-sm shadow-proppoint-primaryBlue" placeholder="Enter your Phone Number"  name='time'  onChange={handleChange}/>
                 </div>
 
-                <button className="bg-proppoint-primaryBlue text-white rounded-md px-3 py-1.5 hover:bg-white hover:text-proppoint-primaryBlue hover:border hover:border-proppoint-primaryBlue">Submit</button>            
+                <button onClick={() => handleSubmit()} className="bg-proppoint-primaryBlue text-white rounded-md px-3 py-1.5 hover:bg-white hover:text-proppoint-primaryBlue hover:border hover:border-proppoint-primaryBlue">Submit</button>            
             </div>
        </div>
     </>

@@ -139,7 +139,7 @@ function DoctorList() {
       const _id = e;
       console.log(_id);
       // axios.post("http://localhost:3500/api/v1/patient/", {_id});
-      navigate(`/contact`);
+      window.location.href = decodeURIComponent(`/${name}/time_slots`);
     }
 
 
@@ -149,41 +149,38 @@ function DoctorList() {
       <div className="container mx-auto px-4">
         
         <main className="mt-12">
-          <section className="container mx-auto flex flex-wrap items-start ">
-            <div className="w-full md:w-9/12">
-              <div className="grid grid-cols-1 flex justify-center md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className=" bg-blue-100 rounded-2xl shadow-2xl">
-                  <img
+          <section className="flex flex-wrap items-center justify-center ">
+            <div className="w-full md:w-full px-16">
+              <div className="flex justify-center gap-4 ">
+                <div className="  rounded-2xl flex flex-wrap gap-4 ">
+                {doctorsList.map((doctor) => (
+                  <div className='bg-blue-100 flex flex-col items-center justify-center rounded-2xl'>
+                    <img
                     src={ProfileImgOne}
                     alt="Jane Doe"
                     className="w-full h-48 object-cover rounded-tr-2xl rounded-tl-2xl mb-4"
                   />
-                  <div className='flex '>
-                    {doctorsList.map((doctor) => (
+                 
+                    
                       <span className="flex items-center flex-col">
                         <h3 className="text-2xl font-medium">{doctor.name}</h3>
                         <p className="text-gray-600 mb-2">{doctor.yearOfExperience} years of Experience</p>
                         <p className="text-gray-600">{doctor.location}</p>
-                        <button className="bg-blue-500 hover:bg-blue-700 mt-4 mb-2 text-white font-bold py-2 px-8 rounded-3xl">
+                        <button onClick={() => {handleClick(doctor.id, doctor.name)}} className="bg-blue-500 hover:bg-blue-700 mt-4 mb-2 text-white font-bold py-2 px-8 rounded-3xl">
                         Book a slot
 
                       </button>
                     </span>
-                    ))}
                   </div>
-              </div>
+                    ))}
+                  
+                  </div>
+               </div>
             </div>
-          </div>
-          {/* <div className="w-full md:w-2/12 md:pl-4 sticky top-0">
-            <img
-              src={DoctorImg}
-              alt="Hospital queue"
-              className="w-full object-cover"
-            />
-          </div> */}
-        </section>
-      </main>
-    </div>
+          
+          </section>
+        </main>
+      </div>
   );
 }
 

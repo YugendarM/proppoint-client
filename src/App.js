@@ -61,7 +61,7 @@ function App() {
 
             <Route path={"/specialization"} exact element={<DoctorSpecialization/>}/>
             <Route path={"/:specializationType/doctors"} exact element={<DoctorList/>}/>
-            <Route path={"/:doctorName/time_slot"} exact element={<TimeSlot/>}/>
+            <Route path={"/:doctorName/time_slots"} exact element={<TimeSlot/>}/>
 
             <Route path={"/patient_credential"} exact element={<PatientCredential/>}/>
             <Route path={"/basic_details"} exact element={<BasicDetails/>}/>
