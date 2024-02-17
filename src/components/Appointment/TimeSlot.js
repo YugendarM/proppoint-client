@@ -7,13 +7,16 @@ import { useNavigate } from 'react-router-dom';
 
 
 function TimeSlot() {
+    const navigate = useNavigate();
 
-    // useEffect(async()=> {
-    //     const timeSlots = await axios({
-    //         method:"GET",
-    //         url:"",
-    //     });
-    // },[])
+    useEffect(async()=> {
+        const timeSlots = await axios.get("http://localhost:3500/api/v1/patient/.......................").
+            then((req,res) => {
+                if(res.data.status === 201){
+                    navigate("/patient_credential");
+                }
+            })
+    },[])
 
 
     const [timeSlots, setTimeSlots] = useState(
@@ -25,11 +28,12 @@ function TimeSlot() {
         ]
     );
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const handleSlotSelection = (slot) => {
-        console.log(slot.date,slot.timeSlots);
-        navigate("/patient_credential");
+    const handleClick = (slot) => {
+        
+        axios.post("http://localhost:3500/api/v1/patient/............................", )
+        
     }
 
     
@@ -38,7 +42,7 @@ function TimeSlot() {
         <div>
             {timeSlots.map((slot) => (
                 <div>
-                    <h1 onClick={handleSlotSelection(slot)}>{slot.date}</h1>
+                    <h1 onClick={handleClick(slot)}>{slot.date}</h1>
                     <h1>{slot.timeslots}</h1>
                 </div>
             ))}

@@ -32,15 +32,15 @@ function BasicDetails() {
     //   setDob(event.target.value);
     // };
   
-    const calculateAge = () => {
-      const currentDate = new Date();
-      const birthDate = new Date(dob);
-      let calculatedAge = currentDate.getFullYear() - birthDate.getFullYear();
+    // const calculateAge = () => {
+    //   const currentDate = new Date();
+    //   const birthDate = new Date(dob);
+    //   let calculatedAge = currentDate.getFullYear() - birthDate.getFullYear();
   
-      // Check if the birthday has occurred this year
-      if (currentDate.getMonth() < birthDate.getMonth() || (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
-        calculatedAge--;
-      }
+    //   // Check if the birthday has occurred this year
+    //   if (currentDate.getMonth() < birthDate.getMonth() || (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
+    //     calculatedAge--;
+    //   }
   
   return (
     <>
@@ -86,7 +86,6 @@ function BasicDetails() {
         </div>
     </>
   )
-}
 }
 
 export default BasicDetails

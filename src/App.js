@@ -11,27 +11,39 @@ import PatientCredential from './components/Appointment/PatientCredential';
 import DoctorHOC from './HOC/Doctor.HOC';
 import PatientsList from './components/Doctor/PatientsList';
 import BasicDetails from './components/Appointment/BasicDetails';
+import DoctorDashboard from './components/Doctor/DoctorDashboard';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import DoctorProfileUpdate from './components/Doctor/DoctorProfileUpdate';
+import DoctorSlotUpdate from './components/Doctor/DoctorSlotUpdate';
 
 function App() {
 
-  const location = useLocation();
-  const currentPath = location.pathname;
+  const pathName = useLocation();
+  const currentPath = pathName.pathname;
 
-  if (currentPath === "/") return <HomePage/>
+  // if (currentPath === "/") return <HomePage/>
   
   return (
     <>
       
+        <AppointmentHOC path={"/home"} exact component={HomePage}/>
+        <AppointmentHOC path={"/about"} exact component={AboutPage}/>
+        <AppointmentHOC path={"/contact"} exact component={ContactPage}/>
+
         <AppointmentHOC path={"/specialization"} exact component={DoctorSpecialization}/>
-        <AppointmentHOC path={"specialization/:specializationName/doctors"} exact component={DoctorList}/>
-        <AppointmentHOC path={"/doctor/timeSlot/:doctorId"} exact component={TimeSlot}/>
+
+        <AppointmentHOC path={"/:specializationType/doctors"} exact component={DoctorList}/>
+        <AppointmentHOC path={"/:doctorName/time_slot"} exact component={TimeSlot}/>
+
         <AppointmentHOC path={"/patient_credential"} exact component={PatientCredential}/>
         <AppointmentHOC path={"/basic_details"} exact component={BasicDetails}/>
 
         <DoctorHOC path={"/doctor/login"} exact component={PatientsList}/>
-        <DoctorHOC path={"/doctor/"} exact component={PatientsList}/>
-        <DoctorHOC path={"/doctor/update_profile"} exact component={PatientsList}/>
-        <DoctorHOC path={"/doctor/update_timeslot"} exact component={PatientsList}/>
+        <DoctorHOC path={"/doctor/"} exact component={DoctorDashboard}/>
+        <DoctorHOC path={"/doctor/update_profile"} exact component={DoctorProfileUpdate}/>
+
+        <DoctorHOC path={"/doctor/update_timeslot"} exact component={DoctorSlotUpdate}/>
         <DoctorHOC path={"/doctor/patients_list/:slotid"} exact component={PatientsList}/>
         <DoctorHOC path={"/doctor/patients_list/:patientid"} exact component={PatientsList}/>
         

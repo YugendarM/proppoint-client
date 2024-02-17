@@ -8,7 +8,27 @@ function PatientsList() {
             {
                 patientId:"12345",
                 patientName:"Arun"
-            }
+            },
+
+            {
+                patientId:"12345",
+                patientName:"Arun"
+            },
+
+            {
+                patientId:"12345",
+                patientName:"Arun"
+            },
+
+            {
+                patientId:"12345",
+                patientName:"Arun"
+            },
+
+            {
+                patientId:"12345",
+                patientName:"Arun"
+            },
         ]
     );
   return (

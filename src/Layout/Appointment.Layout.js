@@ -1,9 +1,10 @@
 import React from 'react'
+import PatientNavbar from '../components/Navbar/PatientNavbar'
 
 function AppointmentLayout(props) {
   return (
     <>
-        <p>appointmentLayout</p>
+        <PatientNavbar/>
 
         {props.children}
 

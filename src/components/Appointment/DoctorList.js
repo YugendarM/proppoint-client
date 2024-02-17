@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+
 
 function DoctorList() {
+
+  
 
   const [doctorsList, setDoctorsList] = useState(
 
@@ -43,28 +46,25 @@ function DoctorList() {
               }
         ]
     );
-    const pathname = window.location.pathname;
 
-    const pathParts = pathname.split('/');
-
-    const middleParam = pathParts[1];
-
-    console.log(middleParam);
 
     // useEffect(async() => {
-    //   const doctorsList = await axios({
-    //     method:"GET",
-    //     // url:`/.../${middleParam}`
-    //   })
+      
+    //   const doctorList = await axios.get("http://localhost:3500/api/v1/patient/specialization");
+    //   setDoctorsList(doctorList.data);
+    //   console.log(doctorList);
+  
     // },[])
-
-
-
-    // const {param1,param2} = useParams();
-
-    // console.log({param1});
-
+    const navigate = useNavigate();
     
+
+    const handleClick = (e,name) => {
+      const _id = e;
+      console.log(_id);
+      // axios.post("http://localhost:3500/api/v1/patient/", {_id});
+      navigate(`/contact`);
+    }
+
 
     
   return (
@@ -73,7 +73,7 @@ function DoctorList() {
             {
                 doctorsList.map((doctor) => (
                     <div>
-                        <Link to={`doctor/timeslot/${doctor.id}`}>{doctor.name}</Link>
+                        <button onClick={handleClick(doctor.id,doctor.name)} >{doctor.name}</button>
                         <p>{doctor.id}</p>
                     </div>
                 ))
