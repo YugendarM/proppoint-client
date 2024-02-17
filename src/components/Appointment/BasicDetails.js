@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import basicDetailImage from "../../assets/Images/BasicDetailsImage.png"
 
 function BasicDetails() {
 
@@ -9,7 +10,7 @@ function BasicDetails() {
         lastName:"",
         dateOfBirth:"",
         gender:"",
-        diabetes: false,
+        diabetes: "",
         diabetesValue:0,
         historyOfSurgery:false,
         historyOfSurgeryDescription:"",
@@ -43,10 +44,65 @@ function BasicDetails() {
     //   }
   
   return (
-    <>
-    <h1>basic_details</h1>
-        <div>
-            Email:<input value={userData.email} type='email' name='email' className='border-2'/>
+    <div className='flex lg:px-64 container'>
+    
+        <div className='w-1/2 flex flex-col items-center gap-5'>
+            <div className="flex justify-center w-full">
+                <input name='email' value={userData.email} onChange={handleChange} placeholder="Enter your Email" className="border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2" />
+            </div>
+
+            <div className="flex justify-center w-full">
+                <input name='phone' value={userData.phone} onChange={handleChange} placeholder="Enter Phone Number" className="border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2" />
+            </div>
+
+            <div className="flex justify-center w-full">
+                <input name='firstName' value={userData.firstName} onChange={handleChange} placeholder="Enter First Name" className="border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2" />
+            </div>
+
+            <div className="flex justify-center w-full">
+                <input name='lastName' value={userData.lastName} onChange={handleChange} placeholder="Enter Last Name" className="border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2" />
+            </div>
+
+            
+            <div className="flex justify-center items-start flex-col w-full ml-52">
+                <p className='font-semibold'>Enter Date of Birth:</p>
+                <input type='date' name='dateOfBirth' value={userData.dateOfBirth} onChange={handleChange} placeholder="Enter " className="border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2" />
+            </div>
+
+
+            <div className="flex justify-center items-start flex-col w-full ml-52">
+                <p className='font-semibold'>Are you a diabetic patient?</p>
+                {/* <input type='date' name='dateOfBirth' value={userData.dateOfBirth} onChange={handleChange} placeholder="Enter " className="border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2" /> */}
+                <div className='flex px-3 py-2 gap-3'>
+                    <div className='flex gap-2 items-center'><input  type='radio' name='diabetes' className='border-2' value = {true}  onChe onChange={handleChange}/>Yes</div>
+                    <div className='flex gap-2 items-center'><input type='radio' name='diabetes' className='border-2' value= {false}  onChange={handleChange}/> No</div>
+                </div>
+                
+            </div>
+
+            {userData.diabetes && 
+            
+            <div className="flex justify-center items-start flex-col w-full ml-52">
+                <p className='font-semibold'>Enter the Diabetes Value:</p>
+                <input type='number' name='diabetesValue' value={userData.diabetesValue} onChange={handleChange} placeholder="Enter the diabetes Value " className="border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2" />
+            </div>
+            }
+
+            
+                <div className='w-full flex flex-col items-end ml-52'>
+                    <div className='w-full'>
+                        <p>Gender</p>
+                        <select className='border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2' value={userData.gender} onChange={handleChange}>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                </div>
+            
+            
+
+            {/* Email:<input value={userData.email} type='email' name='email' className='border-2'/>
             Phone:<input value={userData.phone} type='phone' name='phone' className='border-2'/>
             FirstName:<input value={userData.firstName} type='text' name='firstName' className='border-2'/>
             LastName:<input value={userData.lastName} type='text' name='lastName' className='border-2'/>
@@ -81,10 +137,16 @@ function BasicDetails() {
 
             Occupation:<input type='text' value={userData.occupation} onChange={handleChange}/>
 
-            Problem:<input type='text' value={userData.problemDescription} onChange={handleChange}/>
+            Problem:<input type='text' value={userData.problemDescription} onChange={handleChange}/> */}
 
         </div>
-    </>
+
+        <div className='flex justify-center items-center'>
+            <div className="w-1/2  flex justify- items-center">
+                <div className="w-full"><img src={basicDetailImage} className=""/></div>
+            </div>
+        </div>
+    </div>
   )
 }
 

@@ -13,11 +13,11 @@ const DoctorSpecialization =()=>{
     // axios.post("http://localhost:3500/api/v1/patient/search-doctor", {_id})
     //   .then((req,res) => {
     //     if(res.data.status === 201){
-          // window.location.href(`${type}/doctors`);
+          // window.location.href="${specialization}/doctors";
     //     }
     //   })
 
-    // window.location.href(`${specialization}/doctors`);
+    window.location.href=`${type}/doctors`;
     // window.history.pushState(null, null, `/${specialization}/doctors`);
     //       window.history.go();
   }
@@ -34,15 +34,15 @@ const DoctorSpecialization =()=>{
                   },
                   {
                     "_id": 1,
-                    "type": "cardiology"
+                    "type": "Nuero"
                   },
                   {
                     "_id": 1,
-                    "type": "cardiology"
+                    "type": "Surgeon"
                   },
                   {
                     "_id": 1,
-                    "type": "cardiology"
+                    "type": ""
                   },
                   {
                     "_id": 1,
@@ -78,7 +78,7 @@ const DoctorSpecialization =()=>{
         </div>
         <div className='h-full flex flex-wrap gap-10 w-3/5  '>
           {specializations.map((spec) => (
-              <button onClick={handleClick(spec.id, spec.type)} className='flex flex-col gap-2 bg-proppoint-primaryBlueTransparent bg-opacity-10 w-40 px-2 py-2 rounded-lg' >
+              <button onClick={() => handleClick(spec.id, spec.type)} className='flex flex-col gap-2 bg-proppoint-primaryBlueTransparent bg-opacity-10 w-40 px-2 py-2 rounded-lg' >
                   <img src={Cardiology} alt={spec.type} className='w-16'/>
                   <h3 className='text-2xl font-semibold'>{spec.type}</h3>
               </button>

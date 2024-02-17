@@ -1,12 +1,12 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Router, Routes } from 'react-router-dom'
 import AppointmentLayout from '../Layout/Appointment.Layout'
 
 function AppointmentHOC({component:Component, ...rest}) {
   return (
     // <div>AppointmentHOC</div>
     <>
-        <Routes>
+        <Router>
             <Route
              {...rest}
              Component = { (props) => (
@@ -16,7 +16,7 @@ function AppointmentHOC({component:Component, ...rest}) {
             )
         }
             />
-        </Routes>
+        </Router>
     </>
   )
 }
