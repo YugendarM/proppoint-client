@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 // import { useHistory } from 'react-router-dom';
 // impor
 import { useHistory } from 'react-router-dom';
@@ -6,6 +7,15 @@ import { useNavigate } from 'react-router-dom';
 
 
 function TimeSlot() {
+
+    // useEffect(async()=> {
+    //     const timeSlots = await axios({
+    //         method:"GET",
+    //         url:"",
+    //     });
+    // },[])
+
+
     const [timeSlots, setTimeSlots] = useState(
         [
             {
@@ -16,9 +26,10 @@ function TimeSlot() {
     );
 
     const navigate = useNavigate();
+
     const handleSlotSelection = (slot) => {
         console.log(slot.date,slot.timeSlots);
-        navigate("/user-credential");
+        navigate("/patient_credential");
     }
 
     

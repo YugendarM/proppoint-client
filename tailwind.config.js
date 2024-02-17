@@ -7,8 +7,8 @@ module.exports = {
     extend: {
       colors:{
         proppoint: {
-          primaryBlue: "#000",
-          secondaryBlue: "#543678"
+          primaryBlue: "#2A66FE",
+          primaryBlueTransparent: "#2A66FE"
         }
       }
     },

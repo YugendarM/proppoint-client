@@ -6,13 +6,13 @@ function BasicDetails() {
         email:"",
         phone:"",
         firstName:"",
-        LastName:"",
+        lastName:"",
         dateOfBirth:"",
         gender:"",
         diabetes: false,
         diabetesValue:0,
-        surgery:false,
-        surgeryDescription:"",
+        historyOfSurgery:false,
+        historyOfSurgeryDescription:"",
         city:"",
         occupation:"",
         problemDescription:"",
@@ -44,16 +44,19 @@ function BasicDetails() {
   
   return (
     <>
+    <h1>basic_details</h1>
         <div>
             Email:<input value={userData.email} type='email' name='email' className='border-2'/>
             Phone:<input value={userData.phone} type='phone' name='phone' className='border-2'/>
             FirstName:<input value={userData.firstName} type='text' name='firstName' className='border-2'/>
             LastName:<input value={userData.lastName} type='text' name='lastName' className='border-2'/>
             DOB:<input value={userData.dateOfBirth} type='date' name='dateOfBirth' className='border-2'/>
-
+            Diabetes:
             Yes<input  type='radio' name='diabetes' className='border-2'/>
             No<input type='radio' name='diabetes' className='border-2'/>
-            Diabetes:
+
+            DiabetesValue:{userData.diabetes && (<div><input type='number' value={handleChange} name='diabetesValue'/></div>)}
+            Gender:
             <select  onChange={handleChange}>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -63,14 +66,15 @@ function BasicDetails() {
             BP:
             yes<input  type='radio' name='bloodPressure' className='border-2'/>
             No<input type='radio' name='bloodPressure' className='border-2'/>
-
             DiabetesValue:{userData.diabetes && (<div><input type='number' value={handleChange} name='diabetesValue'/></div>)}
 
-            Surgery:
-            yes<input  type='radio' name='surgery' className='border-2'/>
-            No<input type='radio' name='surgery' className='border-2'/>
+            
 
-            Surgery Description:{userData.surgery && (<div><input type='text' value={handleChange} name='surgeryDescription'/></div>)}
+            historyOfSurgery:
+            yes<input  type='radio' name='historyOfSurgery' className='border-2'/>
+            No<input type='radio' name='historyOfSurgery' className='border-2'/>
+
+            surgery Description:{userData.historyOfSurgery && (<div><input type='text' value={handleChange} name='surgeryDescription'/></div>)}
 
 
             City:<input type='text' value={userData.city} onChange={handleChange}/>

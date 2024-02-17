@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom';
 
 function DoctorList() {
-    const [doctorsList, setDoctorsList] = useState(
+
+  const [doctorsList, setDoctorsList] = useState(
+
         [
             {
                 "id": 1,
@@ -40,6 +43,28 @@ function DoctorList() {
               }
         ]
     );
+    const pathname = window.location.pathname;
+
+    const pathParts = pathname.split('/');
+
+    const middleParam = pathParts[1];
+
+    console.log(middleParam);
+
+    // useEffect(async() => {
+    //   const doctorsList = await axios({
+    //     method:"GET",
+    //     // url:`/.../${middleParam}`
+    //   })
+    // },[])
+
+
+
+    // const {param1,param2} = useParams();
+
+    // console.log({param1});
+
+    
 
     
   return (
