@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function DoctorList() {
     const [doctorsList, setDoctorsList] = useState(
@@ -6,7 +7,7 @@ function DoctorList() {
             {
                 "id": 1,
                 "name": "Dr. John Smith",
-                // "specialty": "Cardiology",
+                "specialty": "Cardiology",
                 "specializationId": 1,
                 "qualification": "MD, Cardiology",
                 
@@ -19,7 +20,7 @@ function DoctorList() {
                 "id": 2,
                 "name": "Dr. Sarah Johnson",
                 "specializationId": 1,
-                // "specialty": "Pediatrics",
+                "specialty": "Pediatrics",
                 "qualification": "MD, Pediatrics",
                 "hospital": "Community Clinic",
                 "location": "Los Angeles",
@@ -30,7 +31,7 @@ function DoctorList() {
                 "id": 3,
                 "name": "Dr. Michael Lee",
                 "specializationId": 1,
-                // "specialty": "Orthopedics",
+                "specialty": "Orthopedics",
                 "qualification": "MD, Orthopedics",
                 "hospital": "Regional Medical Center",
                 "location": "Chicago",
@@ -39,9 +40,20 @@ function DoctorList() {
               }
         ]
     );
+
+    
   return (
     <>
-
+        <>
+            {
+                doctorsList.map((doctor) => (
+                    <div>
+                        <Link to={`doctor/timeslot/${doctor.id}`}>{doctor.name}</Link>
+                        <p>{doctor.id}</p>
+                    </div>
+                ))
+            }
+        </>
     </>
   )
 }

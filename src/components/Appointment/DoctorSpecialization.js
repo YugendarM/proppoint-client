@@ -59,7 +59,7 @@ const DoctorSpecialization =()=>{
         {specializations.map((spec) => (
             <div>  
 
-                <Link to={`/appointment/doctor/${spec.specializationId}`} className=''>{spec.specializationId}</Link>
+                <Link to={`/doctors/${spec.specializationId}`} className=''>{spec.specializationId}</Link>
                 <p >{spec.specializationName}</p>
             </div>
             
