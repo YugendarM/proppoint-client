@@ -4,6 +4,7 @@ import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import PatientCredentialImage  from "../../assets/Images/Introduction.png"
 import BookAppointmentNavbar from "../Navbar/BookAppointmentNavbar";
+import axios from "axios";
 
 function PatientCredential() {
 
@@ -11,7 +12,7 @@ function PatientCredential() {
 
     const [userData,setUserData] = useState({
         email:'',
-        phoneNumber:'',
+        phone:'',
     });
 
     const handleChange = (event) => {
@@ -23,10 +24,12 @@ function PatientCredential() {
     const handleSubmit = () => {
         console.log({userData});
         console.log(value);
+        // axios.post("http://localhost:3500/api/v1/patient/checksForId", {email,phone})
 
-        if(1){
-            window.location.href = "/basic_details"
-        }
+        // if(status.data){
+        //     window.location.href = "/basic_details"
+        // }
+        
         
     }
 

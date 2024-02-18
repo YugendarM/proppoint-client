@@ -15,10 +15,16 @@ import BookAppointmentNavbar from "../Navbar/BookAppointmentNavbar";
 
 const DoctorSpecialization = () => {
 
-  useEffect(async() => {
-    const specializationList = await axios.get("http://localhost:3500/api/v1/patient/specialization")
-    setSpecilization(specializationList.data)
-  },[])
+  // useEffect(async() => {
+  //   const specializationList = await axios.get("http://localhost:3500/api/v1/patient/specialization");
+  //   setSpecilization(specializationList.data);
+  // },[])
+
+  // useEffect( async() => {
+  //   const specializationList = await axios.get("http://localhost:3500/api/v1/patient/specialization");
+  //   setSpecilization(specializationList);
+  //   console.log(specializationList);
+  // },[])
 
 
   const handleClick = (e, type) => {
@@ -43,38 +49,38 @@ const DoctorSpecialization = () => {
       image: Cardiology,
     },
     {
-      _id: 1,
+      _id: 2,
       type: "Surgeon",
       image: Surgeon,
     },
     {
-      _id: 1,
+      _id: 3,
       type: "Urology",
       image: Urology,
     },
 
     {
-      _id: 1,
+      _id: 4,
       type: "Gynocology",
       image: Gynocology,
     },
     {
-      _id: 1,
+      _id: 5,
       type: "Gastro",
       image: Gastro,
     },
     {
-      _id: 1,
+      _id: 6,
       type: "Neurology",
       image: Neurology,
     },
     {
-      _id: 1,
+      _id: 7,
       type: "Psychiatry",
       image: Psychiatry,
     },
     {
-      _id: 1,
+      _id: 8,
       type: "Dermo",
       image: Dermo,
     },

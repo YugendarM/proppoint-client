@@ -37,24 +37,24 @@ function TimeSlot() {
     const [timeSlots, setTimeSlots] = useState(
         [
           {
-            "startTime":"2024-12-02T09:00",
-            "endTime":"2024-12-02T09:00",
+            "startTime":"2024-03-12T09:00",
+            "endTime":"2024-03-12T11:00",
 
           },
 
               {
-                "startTime":"2024-12-02T09:00",
-                "endTime":"2024-12-02T09:00",
+                "startTime":"2024-03-17T12:00",
+                "endTime":"2024-03-17T02:00",
 
               },
               {
-                "startTime":"2024-12-02T09:00",
-                "endTime":"2024-12-02T09:00",
+                "startTime":"2024-12-02T04:00",
+                "endTime":"2024-12-02T06:00",
 
               },
               {
-                "startTime":"2024-12-02T09:00",
-                "endTime":"2024-12-02T09:00",
+                "startTime":"2024-12-02T08:00",
+                "endTime":"2024-12-02T010:00",
 
               },
              
@@ -78,6 +78,8 @@ function TimeSlot() {
             
           }
         })
+
+        window.location.href = "/patient_credential"
         
     }
 
