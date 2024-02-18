@@ -48,15 +48,15 @@ function TimeSlot() {
 
               {
                 "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
+                "timeslots": ["03:00 PM", "04:00 PM", "05:00 PM"]
               },
               {
                 "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
+                "timeslots": ["05:00 PM", "06:00 PM", "07:00 PM"]
               },
               {
                 "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
+                "timeslots": ["07:00 PM", "08:00 PM", "09:00 PM"]
               },
               {
                 "date": "2024-02-17",

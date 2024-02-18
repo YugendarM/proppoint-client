@@ -47,8 +47,8 @@ function PatientNavbar() {
         
     ];
     return (
-        <div className=' justify-center w-full'>
-            <div className="flex justify-center gap-5 items-center w-full">
+        <div>
+            <div className="justify-center text-base w-full flex justify-center gap-5 items-center font-semibold w-full">
                 {Navs.map((type) => (
                     <Nav {...type}/>
                 ))}
