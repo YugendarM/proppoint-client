@@ -16,6 +16,8 @@ import ContactPage from './pages/ContactPage';
 import DoctorProfileUpdate from './components/Doctor/DoctorProfileUpdate';
 import DoctorSlotUpdate from './components/Doctor/DoctorSlotUpdate';
 import PatientNavbar from './components/Navbar/PatientNavbar';
+import Login from './components/Login/Login';
+import PatientProfile from './components/Doctor/PatientProfile';
 
 function App() {
 
@@ -66,13 +68,13 @@ function App() {
             <Route path={"/patient_credential"} exact element={<PatientCredential/>}/>
             <Route path={"/basic_details"} exact element={<BasicDetails/>}/>
 
-            <Route path={"/doctor/login"} exact element={<PatientsList/>}/>
+            <Route path={"/doctor/login"} exact element={<Login/>}/>
             <Route path={"/doctor/"} exact element={<DoctorDashboard/>}/>
             <Route path={"/doctor/update_profile"} exact element={<DoctorProfileUpdate/>}/>
 
             <Route path={"/doctor/update_timeslot"} exact element={<DoctorSlotUpdate/>}/>
-            <Route path={"/doctor/patients_list/:slotid"} exact element={<PatientsList/>}/>
-            <Route path={"/doctor/patients_list/:patientid"} exact element={<PatientsList/>}/>
+            <Route path={"/doctor/patients_list"} exact element={<PatientsList/>}/>
+            <Route path={"/doctor/patients_list/:patientid"} exact element={<PatientProfile/>}/>
           </Routes>
     </>
   );

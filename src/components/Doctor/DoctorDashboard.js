@@ -10,12 +10,13 @@ const AppointmentBlock = ({ period, number }) => (
   );
 
   const handleClick  = (_id) => {
-    axios.post("", {})
-    .then((req,res) => {
-      if(res.data.status == 201){
-        window.location.href = `/doctor/patients_list/${_id}`
-      }
-    })
+    // axios.post("", {})
+    // .then((req,res) => {
+    //   if(res.data.status == 201){
+    //     // window.location.href = `/doctor/patients_list/${_id}`
+    //   }
+      window.location.href = `/doctor/patients_list/${_id}`
+    // })
   }
   
   const PatientRow = ({ serial, id, name, gender }) => (
@@ -40,7 +41,7 @@ function DoctorDashboard() {
       ];
     
       const patients = [
-        { serial: "1", id: "20934750", name: "Raju Murugan", gender: "Male" },
+        { serial: "1", id: "20934750", name: "Morgan Greene", gender: "Female" },
         { serial: "2", id: "20934751", name: "Cheyeneotosh", gender: "Male" },
         { serial: "3", id: "20934752", name: "Makenna Calzoni", gender: "Female" },
         { serial: "4", id: "20934753", name: "Desirae Madsen", gender: "Male" },
