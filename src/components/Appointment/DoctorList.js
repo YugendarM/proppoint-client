@@ -2,6 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import ProfileImgOne from "../../assets/Images/ProfileImg1.png"
+import ProfileImgTwo from "../../assets/Images/ProfileImg2.png"
+import ProfileImgThree from "../../assets/Images/ProfileImg3.png"
+import ProfileImgFour from "../../assets/Images/ProfileImg4.png"
+import ProfileImgFive from "../../assets/Images/ProfileImg5.png"
 import DoctorImg from "../../assets/Images/ProfileImg4.png"
 import BookAppointmentNavbar from '../Navbar/BookAppointmentNavbar';
 
@@ -36,7 +40,7 @@ function DoctorList() {
                 "contact": "987-654-3210",
                 "email": "sarah.johnson@example.com",
                 "yearOfExperience":4,
-                "image":{ProfileImgOne}
+                "image":{ProfileImgTwo}
               },
               {
                 "id": 3,
@@ -49,21 +53,7 @@ function DoctorList() {
                 "contact": "456-789-0123",
                 "email": "michael.lee@example.com",
                 "yearOfExperience":4,
-                "image":{ProfileImgOne}
-              },
-
-              {
-                "id": 3,
-                "name": "Dr. Michael Lee",
-                "specializationId": 1,
-                "specialty": "Orthopedics",
-                "qualification": "MD, Orthopedics",
-                "hospital": "Regional Medical Center",
-                "location": "Chicago",
-                "contact": "456-789-0123",
-                "email": "michael.lee@example.com",
-                "yearOfExperience":4,
-                "image":{ProfileImgOne}
+                "image":{ProfileImgThree}
               },
 
               {
@@ -77,7 +67,7 @@ function DoctorList() {
                 "contact": "456-789-0123",
                 "email": "michael.lee@example.com",
                 "yearOfExperience":4,
-                "image":{ProfileImgOne}
+                "image":{ProfileImgFour}
               },
 
               {
@@ -91,36 +81,8 @@ function DoctorList() {
                 "contact": "456-789-0123",
                 "email": "michael.lee@example.com",
                 "yearOfExperience":4,
-                "image":{ProfileImgOne}
+                "image":ProfileImgFive
               },
-
-              {
-                "id": 3,
-                "name": "Dr. Michael Lee",
-                "specializationId": 1,
-                "specialty": "Orthopedics",
-                "qualification": "MD, Orthopedics",
-                "hospital": "Regional Medical Center",
-                "location": "Chicago",
-                "contact": "456-789-0123",
-                "email": "michael.lee@example.com",
-                "yearOfExperience":4,
-                "image":{ProfileImgOne}
-              },
-
-              {
-                "id": 3,
-                "name": "Dr. Michael Lee",
-                "specializationId": 1,
-                "specialty": "Orthopedics",
-                "qualification": "MD, Orthopedics",
-                "hospital": "Regional Medical Center",
-                "location": "Chicago",
-                "contact": "456-789-0123",
-                "email": "michael.lee@example.com",
-                "yearOfExperience":4,
-                "image":{ProfileImgOne}
-              }
 
         ]
     );
@@ -167,9 +129,9 @@ function DoctorList() {
                     
                       <span className="flex items-center flex-col">
                         <h3 className="text-2xl font-medium">{doctor.name}</h3>
-                        <p className="text-gray-600 mb-2">{doctor.yearOfExperience} years of Experience</p>
+                        <p className="text-gray-600 mb-1">{doctor.yearOfExperience} years of Experience</p>
                         <p className="text-gray-600">{doctor.location}</p>
-                        <button onClick={() => {handleClick(doctor.id, doctor.name)}} className="bg-blue-500 hover:bg-blue-700 mt-4 mb-2 text-white font-bold py-2 px-8 rounded-3xl">
+                        <button onClick={() => {handleClick(doctor.id, doctor.name)}} className="bg-blue-500 hover:bg-blue-700 hover:bg-blue-100 mt-4 mb-5 text-white font-bold py-2 px-8 rounded-3xl">
                         Book a slot
 
                       </button>

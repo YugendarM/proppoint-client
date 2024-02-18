@@ -48,7 +48,7 @@ function App() {
         <DoctorHOC path={"/doctor/patients_list/:slotid"} exact component={PatientsList}/>
         <DoctorHOC path={"/doctor/patients_list/:patientid"} exact component={PatientsList}/> */}
         
-        {/* <DoctorHOC path={"/doctor/patients/:patientId"} exact component={PatientsList}/> */}\
+        {/* <DoctorHOC path={"/doctor/patients/:patientId"} exact component={PatientsList}/> */}
 
 
 
