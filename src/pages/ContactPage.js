@@ -1,8 +1,11 @@
 import React from 'react'
+import PatientNavbar from '../components/Navbar/PatientNavbar'
 
 function ContactPage() {
   return (
-    <div>ContactPage</div>
+    <div>
+      <PatientNavbar/>
+    </div>
   )
 }
 

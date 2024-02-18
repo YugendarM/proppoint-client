@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import ProfileImgOne from "../../assets/Images/ProfileImg1.png"
 import DoctorImg from "../../assets/Images/ProfileImg4.png"
+import BookAppointmentNavbar from '../Navbar/BookAppointmentNavbar';
 
 function DoctorList() {
 
@@ -146,6 +147,8 @@ function DoctorList() {
     
   
     return (
+      <div>
+        <BookAppointmentNavbar/>
       <div className="container mx-auto px-4">
         
         <main className="mt-12">
@@ -180,6 +183,7 @@ function DoctorList() {
           
           </section>
         </main>
+      </div>
       </div>
   );
 }

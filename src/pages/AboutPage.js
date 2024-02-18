@@ -1,8 +1,11 @@
 import React from 'react'
+import PatientNavbar from '../components/Navbar/PatientNavbar'
 
 function AboutPage() {
   return (
-    <div>AboutPage</div>
+    <div>
+      <PatientNavbar/>
+    </div>
   )
 }
 

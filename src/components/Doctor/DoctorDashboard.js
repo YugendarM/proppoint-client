@@ -1,12 +1,22 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 
 const AppointmentBlock = ({ period, number }) => (
-    <section className="flex flex-col sticky top-0 grow items-center C px-14 pt-6 pb-9 w-full text-2xl bg-white rounded-2xl max-md:px-5 max-md:mt-8">
+    <section className="flex flex-col justify-center items-center px-14 pt-6 pb-9 w-full text-2xl bg-white rounded-2xl mt-20">
       <h4 className="text-blue-600 font-semibold">{period}</h4>
       <p className="mt-3 text-7xl font-bold text-black max-md:text-4xl">{number}</p>
-      <p className="self-stretch items-center ml-7 justify-center mt-1.5 text-neutral-600">Appointments</p>
+      <p className="self-stretch items-center  text-center justify-center mt-1.5 text-neutral-600">Appointments</p>
     </section>
   );
+
+  const handleClick  = (_id) => {
+    axios.post("", {})
+    .then((req,res) => {
+      if(res.data.status == 201){
+        window.location.href = `/doctor/patients_list/${_id}`
+      }
+    })
+  }
   
   const PatientRow = ({ serial, id, name, gender }) => (
     <div className="flex gap-5 justify-between items-center mt-4 max-w-full w-[785px] max-md:flex-wrap">
@@ -14,7 +24,10 @@ const AppointmentBlock = ({ period, number }) => (
       <p className="flex-auto self-stretch my-auto">#{id}</p>
       <p className="flex-auto self-start mt-3">{name}</p>
       <p className="self-stretch my-auto">{gender}</p>
-      <button className="grow justify-center ml-28  self-stretch text-lg font-medium text-white whitespace-nowrap bg-blue-600 rounded-3xl">View profile</button>
+      <div>
+      <button onClick={() => {handleClick(id)}} className="justify-center  self-stretch  font-medium text-white whitespace-nowrap bg-blue-600 rounded-3xl px-3 py-2 text-2xl ml-32">View profile</button>
+
+      </div>
     </div>
   );
 
@@ -58,7 +71,7 @@ function DoctorDashboard() {
                 </div>
               </section>
               <article className="flex flex-col items-center pt-5 pb-12 mt-7 text-2xl text-black bg-white rounded-[32px] max-md:max-w-full">
-                <header className="flex gap-5 justify-between self-stretch px-20 py-2.5 font-medium border-b border-solid border-b-black border-b-opacity-20 max-md:flex-wrap max-md:px-5 max-md:max-w-full">
+                <header className="flex gap-5 justify-center  px-20 py-2.5 font-medium border-b border-solid border-b-black border-b-opacity-20 max-md:flex-wrap max-md:px-5 max-md:max-w-full">
                   <p>S.No</p>
                   <p>Patient ID</p>
                   <p className="pl-28">Name</p>

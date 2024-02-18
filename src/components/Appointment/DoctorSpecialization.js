@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import doctor from "../../assets/Images/standing.png";
 import Cardiology from "../../assets/Images/heart-rate-pulse-graph.png";
 import axios from 'axios';
+import PatientNavbar from '../Navbar/PatientNavbar';
+import BookAppointmentNavbar from '../Navbar/BookAppointmentNavbar';
 
 const DoctorSpecialization =()=>{
 
@@ -17,7 +19,7 @@ const DoctorSpecialization =()=>{
     //     }
     //   })
 
-    window.location.href=`${type}/doctors`;
+    window.location.href=`specialization/${type}/doctors`;
     // window.history.pushState(null, null, `/${specialization}/doctors`);
     //       window.history.go();
   }
@@ -72,6 +74,8 @@ const DoctorSpecialization =()=>{
     );
   return (
     <>
+    <BookAppointmentNavbar/>
+    
       <div className='h-full flex justify-center items-center my-10'>
         <div className='h-full w-2/5 flex justify-center'>
           <img className='' src= {doctor} style={{width:"150px"}}/>

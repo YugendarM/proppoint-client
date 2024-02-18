@@ -1,10 +1,13 @@
 import React from 'react'
 import MeditatingImg from '../assets/Images/MeditatingDoodle 1.png';
+import PatientNavbar from '../components/Navbar/PatientNavbar';
 
 
 function HomePage() {
   return (
     <>
+
+<PatientNavbar/>
         <div className="container mx-auto px-4">
           
 

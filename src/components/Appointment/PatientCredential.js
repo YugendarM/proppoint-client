@@ -3,6 +3,7 @@ import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import PatientCredentialImage  from "../../assets/Images/Introduction.png"
+import BookAppointmentNavbar from "../Navbar/BookAppointmentNavbar";
 
 function PatientCredential() {
 
@@ -32,7 +33,7 @@ function PatientCredential() {
 
   return (
     <>
-
+        <BookAppointmentNavbar/>
     
        <div className="flex items-center justify-between px-64 mt-16">
             <div className="w-1/2 flex justify-center">

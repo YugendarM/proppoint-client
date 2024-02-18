@@ -4,18 +4,13 @@ import React, { useEffect, useState } from 'react'
 // impor
 import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import BookAppointmentNavbar from '../Navbar/BookAppointmentNavbar';
 
 
 function TimeSlot() {
     const navigate = useNavigate();
     const [select, setSelect] = useState(false);
 
-    // useEffect(async() => {
-    //   const slotList = await axios.get("");
-    //   setTimeSlots(slotList);
-    //   console.log();
-      
-    // },[]);
 
     const [date,setDate] = useState("");
 
@@ -41,46 +36,46 @@ function TimeSlot() {
 
     const [timeSlots, setTimeSlots] = useState(
         [
-            {
-                "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
-              },
+          {
+            "startTime":"2024-12-02T09:00",
+            "endTime":"2024-12-02T09:00",
+
+          },
 
               {
-                "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
+                "startTime":"2024-12-02T09:00",
+                "endTime":"2024-12-02T09:00",
+
               },
               {
-                "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
+                "startTime":"2024-12-02T09:00",
+                "endTime":"2024-12-02T09:00",
+
               },
               {
-                "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
+                "startTime":"2024-12-02T09:00",
+                "endTime":"2024-12-02T09:00",
+
               },
-              {
-                "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
-              },
-              {
-                "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
-              },
-              {
-                "date": "2024-02-17",
-                "timeslots": ["10:00 AM", "11:00 AM", "2:00 PM"]
-              },
+             
+
+              
 
         ]
     );
 
-    // const navigate = useNavigate();
 
-    const handleClick = (slot) => {        
+    const handleClick = (slot) => {
+      console.log({selectedSlot});
+            console.log(selectedSlot.startTime);
+            console.log(selectedSlot.endTime);
+            console.log({selectedSlot});
+            console.log({selectedDate});        
         axios.post("", {selectedSlot})
         .then((req,res) => {
           if(res.data.status === 201){
             window.location.href = "/patient_credential"
+            
           }
         })
         
@@ -88,16 +83,29 @@ function TimeSlot() {
 
     const handleChange = (event) => {
         const date = event.target.value;
-        setDate(date);
-        console.log(date);
+        setSelectedDate(date);
+        console.log(selectedDate);
         
     }
 
     const handleSelect = (sTime, eTime, index) => {
-      setSelectedSlot({startTime:`${selectedDate}T${sTime}:00`, endTime:`${selectedDate}T${eTime}:00`} );
-      console.log({selectedSlot});
+      setSelectedSlot({startTime:`${selectedDate}T${sTime}`, endTime:`${selectedDate}T${eTime}`} );
+      
       setSelect(index);
 
+    }
+
+    const calcTime = (startTime) => {
+      console.log(startTime+"start");
+      if (startTime) {
+        const time = startTime.split("T");
+        console.log(time);
+        console.log(time[1]);
+        // console.log(time[1]);
+        return time[1];
+      } else {
+        return ""; // or any other default value or handling
+      }
     }
 
     
@@ -105,6 +113,7 @@ function TimeSlot() {
     
   return (
     <>
+    <BookAppointmentNavbar/>
         <div className='flex flex-col items-center justify-center mt-10'>
             <div className='flex flex-col justify-center items-center gap-4'>
                 <div className='flex flex-col justify-center items-center gap-4'>
@@ -118,8 +127,8 @@ function TimeSlot() {
                 <h2 className='text-2xl font-semibold'>Available Slots:</h2>
                 <div className='flex flex-wrap justify-center gap-6 px-64'>
                     {timeSlots.map((slot,index) => (
-                        <div key={index} onClick={() => {handleSelect(slot.startTime, slot.endTime, index)}}  className={`cursor-pointer ${select === index ? "bg-proppoint-primaryBlue text-white" : "bg-proppoint-primaryBlue bg-opacity-15 text-proppoint-primaryBlue" }  text-xl rounded-lg px-3 py-4 hover:text-proppoint-primaryBlue hover:bg-white hover:border hover:border-proppoint-primaryBlue`}>
-                            <h5>1:00 pm to 3:00 pm</h5>   
+                        <div key={index} onClick={() => {handleSelect(slot.startTime, slot.endTime, index)}}  className={`cursor-pointer ${select === index ? "bg-proppoint-primaryBlue text-white" : "bg-proppoint-primaryBlue bg-opacity-15 text-proppoint-primaryBlue" }  text-xl rounded-lg px-6 py-9 font-semibold hover:text-proppoint-primaryBlue hover:bg-white hover:border hover:border-proppoint-primaryBlue`}>
+                            <h5>{calcTime(slot.startTime)} to {calcTime(slot.endTime)}</h5>   
                         </div>
                     ))}
                 </div>
