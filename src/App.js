@@ -16,7 +16,6 @@ import ContactPage from './pages/ContactPage';
 import DoctorProfileUpdate from './components/Doctor/DoctorProfileUpdate';
 import DoctorSlotUpdate from './components/Doctor/DoctorSlotUpdate';
 import PatientNavbar from './components/Navbar/PatientNavbar';
-import PatientProfile from './components/Doctor/PatientProfile';
 
 function App() {
 
@@ -52,7 +51,7 @@ function App() {
 
 
 
-        
+        {/* <PatientNavbar/> */}
         
 
         <Routes>
@@ -61,7 +60,7 @@ function App() {
             <Route path={"/contact"} exact element={<ContactPage/>}/>
 
             <Route path={"/specialization"} exact element={<DoctorSpecialization/>}/>
-            <Route path={"specialization/:specializationType/doctors"} exact element={<DoctorList/>}/>
+            <Route path={"/:type/doctors"} exact element={<DoctorList/>}/>
             <Route path={"/:doctorName/time_slots"} exact element={<TimeSlot/>}/>
 
             <Route path={"/patient_credential"} exact element={<PatientCredential/>}/>
@@ -72,8 +71,8 @@ function App() {
             <Route path={"/doctor/update_profile"} exact element={<DoctorProfileUpdate/>}/>
 
             <Route path={"/doctor/update_timeslot"} exact element={<DoctorSlotUpdate/>}/>
-            {/* <Route path={"/doctor/patients_list/"} exact element={<PatientsList/>}/> */}
-            <Route path={"/doctor/patients_list/:patientid"} exact element={<PatientProfile/>}/>
+            <Route path={"/doctor/patients_list/:slotid"} exact element={<PatientsList/>}/>
+            <Route path={"/doctor/patients_list/:patientid"} exact element={<PatientsList/>}/>
           </Routes>
     </>
   );

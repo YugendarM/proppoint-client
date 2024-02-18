@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import doctor from "../../assets/Images/standing.png";
 import Cardiology from "../../assets/Images/heart-rate-pulse-graph.png";
-<<<<<<< HEAD
-import axios from 'axios';
-import PatientNavbar from '../Navbar/PatientNavbar';
-import BookAppointmentNavbar from '../Navbar/BookAppointmentNavbar';
-=======
 import Surgeon from "../../assets/Images/Specialization_icons/surgeon.png";
 import Urology from "../../assets/Images/Specialization_icons/urology.png";
 import Psychiatry from "../../assets/Images/Specialization_icons/Psychiatry.png";
@@ -14,29 +9,31 @@ import Gynocology from "../../assets/Images/Specialization_icons/gynocology.png"
 import Gastro from "../../assets/Images/Specialization_icons/Gastroenterology.png";
 import Dermo from "../../assets/Images/Specialization_icons/dermatology.png";
 import Neurology from "../../assets/Images/Specialization_icons/Neurology.png";
->>>>>>> 88fc0e1c735db70d5893b708db8a847c00d64801
 
 import axios from "axios";
+import BookAppointmentNavbar from "../Navbar/BookAppointmentNavbar";
 
 const DoctorSpecialization = () => {
+
+  useEffect(async() => {
+    const specializationList = await axios.get("http://localhost:3500/api/v1/patient/specialization")
+    setSpecilization(specializationList.data)
+  },[])
+
+
   const handleClick = (e, type) => {
     const _id = e;
     console.log(_id);
 
-    // axios.post("http://localhost:3500/api/v1/patient/search-doctor", {_id})
-    //   .then((req,res) => {
-    //     if(res.data.status === 201){
-    // window.location.href="${specialization}/doctors";
-    //     }
-    //   })
+    axios.post("http://localhost:3500/api/v1/patient/search-doctor", {_id})
+      .then((req,res) => {
+        if(res.data.status === 201){
+    window.location.href=`${type}/doctors`;
+        }
+      })
 
-<<<<<<< HEAD
-    window.location.href=`specialization/${type}/doctors`;
-=======
     window.location.href = `${type}/doctors`;
->>>>>>> 88fc0e1c735db70d5893b708db8a847c00d64801
-    // window.history.pushState(null, null, `/${specialization}/doctors`);
-    //       window.history.go();
+  
   };
 
   const [specializations, setSpecilization] = useState([
@@ -84,17 +81,10 @@ const DoctorSpecialization = () => {
   ]);
   return (
     <>
-<<<<<<< HEAD
     <BookAppointmentNavbar/>
-    
-      <div className='h-full flex justify-center items-center my-10'>
-        <div className='h-full w-2/5 flex justify-center'>
-          <img className='' src= {doctor} style={{width:"150px"}}/>
-=======
       <div className=" flex justify-center items-center ">
         <div className="w-2/5 flex justify-center">
           <img className="" src={doctor} style={{ width: "150px" }} />
->>>>>>> 88fc0e1c735db70d5893b708db8a847c00d64801
         </div>
         <div className="h-full flex flex-wrap gap-5 p-5 w-8/12  ">
           {specializations.map((spec) => (

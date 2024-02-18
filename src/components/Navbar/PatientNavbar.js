@@ -21,21 +21,12 @@ const Nav = (props) => {
 
 function PatientNavbar() {
     return (
-<<<<<<< HEAD
         <div className='justify-center w-full'>
             <div className="flex justify-center gap-5 items-center w-full">
                 <Nav route="" title="Home" />
                 <Nav route="specialization" title="Book Appointment" />
                 <Nav route="about" title="About Us" />
                 <Nav route="contact" title="Contact Us" />
-=======
-        <div>
-            <div className="justify-center text-base w-full flex justify-center gap-5 items-center font-semibold w-full">
-                {Navs.map((type) => (
-                    <Nav {...type}/>
-                ))}
-                
->>>>>>> 88fc0e1c735db70d5893b708db8a847c00d64801
             </div>
         </div>
     );
