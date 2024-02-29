@@ -85,17 +85,19 @@ const DoctorSpecialization = () => {
       image: Dermo,
     },
   ]);
+
   return (
-    <>
-      <div className=" flex justify-center items-center ">
-        <div className="w-2/5 flex justify-center">
+    <React.Fragment>
+      {/* <h1 className="text-3xl font-semibold">Book your Appointments...</h1> */}
+      <div className=" flex justify-center items-center md:h-[85vh] py-4">
+        <div className="w-2/5 hidden lg:flex justify-center  ">
           <img className="" src={doctor} style={{ width: "150px" }} />
         </div>
-        <div className="h-full flex flex-wrap gap-5 p-5 w-8/12  ">
+        <div className=" flex flex-wrap gap-5 md:p-5 md:w-8/12 justify-between lg:justify-start ">
           {specializations.map((spec) => (
             <button
               onClick={() => handleClick(spec.id, spec.type)}
-              className="flex flex-col gap-2 bg-proppoint-primaryBlueTransparent bg-opacity-10 hover:bg-blue-100 shadow hover:shadow-lg w-48 pb-4 pl-6 pt-6 pr-2 rounded-lg"
+              className="mx-5 md:mx-0 flex flex-col h-36 md:h-48 gap-2 bg-proppoint-primaryBlueTransparent bg-opacity-10 hover:bg-blue-100 shadow hover:shadow-lg w-full md:w-48 pb-4 pl-6 pt-6 pr-2 rounded-lg"
             >
               <img src={spec.image} alt={spec.type} className="w-16" />
               <h3 className="text-2xl font-semibold">{spec.type}</h3>
@@ -103,7 +105,7 @@ const DoctorSpecialization = () => {
           ))}
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };
 

@@ -38,12 +38,11 @@ function App() {
         <AppointmentHOC path={"/contact"} exact component={ContactPage}/>
 
         <AppointmentHOC path={"/book_appointment"} exact component={DoctorSpecialization}/>
-
         <AppointmentHOC path={"/book_appointment/:specializationType/doctors"} exact component={DoctorList}/>
         <AppointmentHOC path={"/book_appointment/:specializationType/:doctorName/time_slots"} exact component={TimeSlot}/>
 
         <AppointmentHOC path={"/book_appointment/patient_credential"} exact component={PatientCredential}/>
-        <AppointmentHOC path={"/basic_details"} exact component={BasicDetails}/>
+        <AppointmentHOC path={"/book_appointment/basic_details"} exact component={BasicDetails}/>
 
         <DoctorHOC path={"/doctor/login"} exact component={PatientsList}/>
         <DoctorHOC path={"/doctor/"} exact component={DoctorDashboard}/>
