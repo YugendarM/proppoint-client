@@ -1,10 +1,10 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Router, Routes } from 'react-router-dom'
 import DoctorLayout from '../Layout/Doctor.Layout'
+// import Dorctor 
 
 function DoctorHOC({component:Component, ...rest}) {
   return (
-    // <div>AppointmentHOC</div>
     <>
         <Routes>
             <Route

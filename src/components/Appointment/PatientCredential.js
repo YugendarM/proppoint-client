@@ -36,7 +36,6 @@ function PatientCredential() {
 
   return (
     <>
-        <BookAppointmentNavbar/>
     
        <div className="flex items-center justify-between px-64 mt-16">
             <div className="w-1/2 flex justify-center">

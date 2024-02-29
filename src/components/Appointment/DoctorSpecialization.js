@@ -38,7 +38,7 @@ const DoctorSpecialization = () => {
         }
       })
 
-    window.location.href = `${type}/doctors`;
+    window.location.href = `book_appointment/${type}/doctors`;
   
   };
 
@@ -87,7 +87,6 @@ const DoctorSpecialization = () => {
   ]);
   return (
     <>
-    <BookAppointmentNavbar/>
       <div className=" flex justify-center items-center ">
         <div className="w-2/5 flex justify-center">
           <img className="" src={doctor} style={{ width: "150px" }} />

@@ -79,7 +79,7 @@ function TimeSlot() {
           }
         })
 
-        window.location.href = "/patient_credential"
+        window.location.href = "/book_appointment/patient_credential"
         
     }
 
@@ -110,17 +110,25 @@ function TimeSlot() {
       }
     }
 
+    const [minDate, setMinDate] = useState('');
+
+    useEffect(() => {
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 2); // Get the next day
+        const formattedDate = currentDate.toISOString().split('T')[0]; // Format the date to YYYY-MM-DD
+        setMinDate(formattedDate);
+    }, []);
+
     
 
     
   return (
     <>
-    <BookAppointmentNavbar/>
         <div className='flex flex-col items-center justify-center mt-10'>
             <div className='flex flex-col justify-center items-center gap-4'>
                 <div className='flex flex-col justify-center items-center gap-4'>
                     <p className='text-xl font-semibold'>Enter the Date to select the Slots: </p>
-                    <input type='date' onChange={handleChange} className='border-2 rounded-md px-3 py-2 w-11/12 border-proppoint-primaryBlue shadow-sm'/>
+                    <input type='date' min={minDate} onChange={handleChange} className='border-2 rounded-md px-3 py-2 w-11/12 border-proppoint-primaryBlue shadow-sm'/>
                 </div>
             </div>
 

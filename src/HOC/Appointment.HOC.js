@@ -6,7 +6,7 @@ function AppointmentHOC({component:Component, ...rest}) {
   return (
     // <div>AppointmentHOC</div>
     <>
-        <Router>
+        <Routes>
             <Route
              {...rest}
              Component = { (props) => (
@@ -16,7 +16,7 @@ function AppointmentHOC({component:Component, ...rest}) {
             )
         }
             />
-        </Router>
+        </Routes>
     </>
   )
 }

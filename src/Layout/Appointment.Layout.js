@@ -8,7 +8,6 @@ function AppointmentLayout(props) {
 
         {props.children}
 
-        <p>AppointmentLayoutBottom</p>
     </>
   )
 }

@@ -104,7 +104,8 @@ function DoctorList() {
       const _id = e;
       console.log(_id);
       // axios.post("http://localhost:3500/api/v1/patient/", {_id});
-      window.location.href = decodeURIComponent(`/${name}/time_slots`);
+      const docName = name.replace(/ /g, "-");
+      window.location.href = `${docName}/time_slots`;
     }
 
 
@@ -112,7 +113,6 @@ function DoctorList() {
   
     return (
       <div>
-        <BookAppointmentNavbar/>
       <div className="container mx-auto px-4">
         
         <main className="mt-12">

@@ -18,6 +18,9 @@ import DoctorSlotUpdate from './components/Doctor/DoctorSlotUpdate';
 import PatientNavbar from './components/Navbar/PatientNavbar';
 import Login from './components/Login/Login';
 import PatientProfile from './components/Doctor/PatientProfile';
+import DoctorLayout from './Layout/Doctor.Layout';
+import Doctorhoc from './HOC/Doctor.HOC'
+import DoctorHOC from './HOC/Doctor.HOC';
 
 function App() {
 
@@ -28,17 +31,18 @@ function App() {
   
   return (
     <>
+    
       
-        {/* <AppointmentHOC path={"/home"} exact component={HomePage}/>
+        <AppointmentHOC path={"/"} exact component={HomePage}/>
         <AppointmentHOC path={"/about"} exact component={AboutPage}/>
         <AppointmentHOC path={"/contact"} exact component={ContactPage}/>
 
-        <AppointmentHOC path={"/specialization"} exact component={DoctorSpecialization}/>
+        <AppointmentHOC path={"/book_appointment"} exact component={DoctorSpecialization}/>
 
-        <AppointmentHOC path={"/:specializationType/doctors"} exact component={DoctorList}/>
-        <AppointmentHOC path={"/:doctorName/time_slot"} exact component={TimeSlot}/>
+        <AppointmentHOC path={"/book_appointment/:specializationType/doctors"} exact component={DoctorList}/>
+        <AppointmentHOC path={"/book_appointment/:specializationType/:doctorName/time_slots"} exact component={TimeSlot}/>
 
-        <AppointmentHOC path={"/patient_credential"} exact component={PatientCredential}/>
+        <AppointmentHOC path={"/book_appointment/patient_credential"} exact component={PatientCredential}/>
         <AppointmentHOC path={"/basic_details"} exact component={BasicDetails}/>
 
         <DoctorHOC path={"/doctor/login"} exact component={PatientsList}/>
@@ -47,7 +51,7 @@ function App() {
 
         <DoctorHOC path={"/doctor/update_timeslot"} exact component={DoctorSlotUpdate}/>
         <DoctorHOC path={"/doctor/patients_list/:slotid"} exact component={PatientsList}/>
-        <DoctorHOC path={"/doctor/patients_list/:patientid"} exact component={PatientsList}/> */}
+        <DoctorHOC path={"/doctor/patients_list/:patientid"} exact component={PatientsList}/>
         
         {/* <DoctorHOC path={"/doctor/patients/:patientId"} exact component={PatientsList}/> */}
 
@@ -56,7 +60,7 @@ function App() {
         {/* <PatientNavbar/> */}
         
 
-        <Routes>
+        {/* <Routes>
             <Route path={"/"} exact element={<HomePage/>}/>
             <Route path={"/about"} exact element={<AboutPage/>}/>
             <Route path={"/contact"} exact element={<ContactPage/>}/>
@@ -75,7 +79,7 @@ function App() {
             <Route path={"/doctor/update_timeslot"} exact element={<DoctorSlotUpdate/>}/>
             <Route path={"/doctor/patients_list"} exact element={<PatientsList/>}/>
             <Route path={"/doctor/patients_list/:patientid"} exact element={<PatientProfile/>}/>
-          </Routes>
+          </Routes> */}
     </>
   );
 }

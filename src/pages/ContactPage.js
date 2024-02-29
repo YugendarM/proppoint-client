@@ -4,7 +4,7 @@ import PatientNavbar from '../components/Navbar/PatientNavbar'
 function ContactPage() {
   return (
     <div>
-      <PatientNavbar/>
+      {/* <PatientNavbar/> */}
     </div>
   )
 }
