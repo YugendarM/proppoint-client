@@ -56,29 +56,7 @@ function App() {
 
 
 
-        {/* <PatientNavbar/> */}
         
-
-        {/* <Routes>
-            <Route path={"/"} exact element={<HomePage/>}/>
-            <Route path={"/about"} exact element={<AboutPage/>}/>
-            <Route path={"/contact"} exact element={<ContactPage/>}/>
-
-            <Route path={"/specialization"} exact element={<DoctorSpecialization/>}/>
-            <Route path={"/:type/doctors"} exact element={<DoctorList/>}/>
-            <Route path={"/:doctorName/time_slots"} exact element={<TimeSlot/>}/>
-
-            <Route path={"/patient_credential"} exact element={<PatientCredential/>}/>
-            <Route path={"/basic_details"} exact element={<BasicDetails/>}/>
-
-            <Route path={"/doctor/login"} exact element={<Login/>}/>
-            <Route path={"/doctor/"} exact element={<DoctorDashboard/>}/>
-            <Route path={"/doctor/update_profile"} exact element={<DoctorProfileUpdate/>}/>
-
-            <Route path={"/doctor/update_timeslot"} exact element={<DoctorSlotUpdate/>}/>
-            <Route path={"/doctor/patients_list"} exact element={<PatientsList/>}/>
-            <Route path={"/doctor/patients_list/:patientid"} exact element={<PatientProfile/>}/>
-          </Routes> */}
     </>
   );
 }

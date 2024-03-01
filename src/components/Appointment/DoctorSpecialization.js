@@ -89,7 +89,7 @@ const DoctorSpecialization = () => {
   return (
     <React.Fragment>
       {/* <h1 className="text-3xl font-semibold">Book your Appointments...</h1> */}
-      <div className=" flex justify-center items-center md:h-[85vh] py-4">
+      <div className=" flex justify-center items-center md:h-[85vh] py-4 lg:px-64">
         <div className="w-2/5 hidden lg:flex justify-center  ">
           <img className="" src={doctor} style={{ width: "150px" }} />
         </div>

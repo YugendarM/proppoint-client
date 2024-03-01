@@ -6,8 +6,7 @@ import ProfileImgTwo from "../../assets/Images/ProfileImg2.png"
 import ProfileImgThree from "../../assets/Images/ProfileImg3.png"
 import ProfileImgFour from "../../assets/Images/ProfileImg4.png"
 import ProfileImgFive from "../../assets/Images/ProfileImg5.png"
-import DoctorImg from "../../assets/Images/ProfileImg4.png"
-import BookAppointmentNavbar from '../Navbar/BookAppointmentNavbar';
+import DoctorCard from '../Cards/DoctorCard';
 
 function DoctorList() {
 
@@ -108,47 +107,28 @@ function DoctorList() {
       window.location.href = `${docName}/time_slots`;
     }
 
+    const param = useParams();
+    console.log({param});
 
     
   
     return (
-      <div>
-      <div className="container mx-auto px-4">
-        
-        <main className="mt-12">
-          <section className="flex flex-wrap items-center justify-center ">
-            <div className="w-full md:w-full px-16">
-              <div className="flex justify-center gap-4 ">
-                <div className="  rounded-2xl flex flex-wrap gap-4 ">
-                {doctorsList.map((doctor) => (
-                  <div className='bg-blue-100 flex flex-col items-center justify-center rounded-2xl'>
-                    <img
-                    src={doctor.image}
-                    alt="Jane Doe"
-                    className="w-full h-48 object-cover rounded-tr-2xl rounded-tl-2xl mb-4"
-                  />
-                 
-                    
-                      <span className="flex items-center flex-col">
-                        <h3 className="text-2xl font-medium">{doctor.name}</h3>
-                        <p className="text-gray-600 mb-1">{doctor.yearOfExperience} years of Experience</p>
-                        <p className="text-gray-600">{doctor.location}</p>
-                        <button onClick={() => {handleClick(doctor.id, doctor.name)}} className="bg-blue-500 hover:bg-blue-700 hover:bg-blue-100 mt-4 mb-5 text-white font-bold py-2 px-8 rounded-3xl">
-                        Book a slot
+      
 
-                      </button>
-                    </span>
-                  </div>
-                    ))}
-                  
-                  </div>
-               </div>
-            </div>
-          
-          </section>
-        </main>
-      </div>
-      </div>
+      <React.Fragment>
+        <div className='container mx-auto flex flex-col justify-center my-20 px-6 md:px-6 lg:px-52 gap-6'>
+          <div>
+            <h1 className='font-semibold text-3xl'>{doctorsList.length} {param.specializationType} doctors available near you</h1>
+          </div>
+          <div className='flex flex-wrap gap-10'>
+              {
+                doctorsList.map((doctor) => (
+                  <DoctorCard {...doctor} handleClick={handleClick}/>
+                ))
+              }
+          </div>
+        </div>
+      </React.Fragment>
   );
 }
 
