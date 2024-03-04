@@ -54,7 +54,7 @@ function TimeSlot() {
               },
               {
                 "startTime":"2024-12-02T08:00",
-                "endTime":"2024-12-02T010:00",
+                "endTime":"2024-12-02T10:00",
 
               },
              
@@ -74,7 +74,7 @@ function TimeSlot() {
         axios.post("", {selectedSlot})
         .then((req,res) => {
           if(res.data.status === 201){
-            window.location.href = "/patient_credential"
+            window.location.href = "/book_appointment/patient_credential"
             
           }
         })
@@ -123,22 +123,22 @@ function TimeSlot() {
 
     
   return (
-    <>
-        <div className='flex flex-col items-center justify-center mt-10'>
+    <React.Fragment>
+        <div className='flex flex-col items-center justify-center mt-10 lg:px-64'>
             <div className='flex flex-col justify-center items-center gap-4'>
                 <div className='flex flex-col justify-center items-center gap-4'>
                     <p className='text-xl font-semibold'>Enter the Date to select the Slots: </p>
-                    <input type='date' min={minDate} onChange={handleChange} className='border-2 rounded-md px-3 py-2 w-11/12 border-proppoint-primaryBlue shadow-sm'/>
+                    <input required type='date' min={minDate} onChange={handleChange} className='border-2 rounded-md px-3 py-2 w-11/12 border-proppoint-primaryBlue shadow-sm'/>
                 </div>
             </div>
 
 
             <div className='flex justify-center flex-col items-center gap-5 my-10'>
                 <h2 className='text-2xl font-semibold'>Available Slots:</h2>
-                <div className='flex flex-wrap justify-center gap-6 px-64'>
+                <div className='flex flex-wrap justify-center gap-6 '>
                     {timeSlots.map((slot,index) => (
-                        <div key={index} onClick={() => {handleSelect(slot.startTime, slot.endTime, index)}}  className={`cursor-pointer ${select === index ? "bg-proppoint-primaryBlue text-white" : "bg-proppoint-primaryBlue bg-opacity-15 text-proppoint-primaryBlue" }  text-xl rounded-lg px-6 py-9 font-semibold hover:text-proppoint-primaryBlue hover:bg-white hover:border hover:border-proppoint-primaryBlue`}>
-                            <h5>{calcTime(slot.startTime)} to {calcTime(slot.endTime)}</h5>   
+                        <div key={index} onClick={() => {handleSelect(slot.startTime, slot.endTime, index)}}  className={`cursor-pointer w-48 ${select === index ? " bg-proppoint-primaryBlue text-white" : "bg-proppoint-primaryBlue bg-opacity-15 text-proppoint-primaryBlue" }  text-xl rounded-lg px-6 py-9 font-semibold hover:text-proppoint-primaryBlue hover:bg-white hover:border hover:border-proppoint-primaryBlue`}>
+                            <h5 className='text-center'>{calcTime(slot.startTime)} to {calcTime(slot.endTime)}</h5>   
                         </div>
                     ))}
                 </div>
@@ -146,7 +146,7 @@ function TimeSlot() {
 
             </div>
         </div>
-    </>
+    </React.Fragment>
   )
 }
 

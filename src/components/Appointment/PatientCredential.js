@@ -37,11 +37,11 @@ function PatientCredential() {
   return (
     <>
     
-       <div className="flex items-center justify-between px-64 mt-16">
-            <div className="w-1/2 flex justify-center">
+       <div className="flex items-center justify-between lg:px-64 mt-16">
+            <div className="w-1/2 md:flex justify-center hidden ">
                 <div className="w-4/12"><img src={PatientCredentialImage} className=""/></div>
             </div>
-            <div className="w-1/2 flex flex-col gap-5 items-center">
+            <div className="w-full md:w-1/2 flex flex-col gap-5 items-center">
                 <div className="flex justify-center w-full">
                     <input className="border-2 border-proppoint-primaryBlue border-opacity-70 shadow-sm shadow-proppoint-primaryBlue w-3/5 rounded-md px-3 py-2" name='email' value={userData.email} onChange={handleChange} placeholder="Enter your Email"/>
                 </div>
